@@ -9,9 +9,9 @@ const UserInput = () => {
   });
 
   function handleChange(inputIdentifier, newValue) {
-    setUserInput((prevInput) => {
+    setUserInput((prevUserInput) => {
       return {
-        ...prevInput,
+        ...prevUserInput,
         [inputIdentifier]: newValue,
       };
     });
@@ -26,7 +26,7 @@ const UserInput = () => {
             type="number"
             required
             value={userInput.initialInvestment}
-            onClick={(event) =>
+            onChange={(event) =>
               handleChange("initialInvestment", event.target.value)
             }
           ></input>
@@ -37,7 +37,7 @@ const UserInput = () => {
             type="number"
             required
             value={userInput.annualInvestment}
-            onClick={(event) =>
+            onChange={(event) =>
               handleChange("annualInvestment", event.target.value)
             }
           ></input>
@@ -50,7 +50,7 @@ const UserInput = () => {
             type="number"
             required
             value={userInput.expectedReturn}
-            onClick={(event) =>
+            onChange={(event) =>
               handleChange("expectedReturn", event.target.value)
             }
           ></input>
@@ -61,7 +61,7 @@ const UserInput = () => {
             type="number"
             required
             value={userInput.duration}
-            onClick={(event) => handleChange("duration", event.target.value)}
+            onChange={(event) => handleChange("duration", event.target.value)}
           ></input>
         </p>
       </div>
